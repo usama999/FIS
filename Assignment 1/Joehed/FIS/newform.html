@@ -1,0 +1,80 @@
+﻿
+<html>
+<head>
+<title>Make your Mobile Phone Order</title>
+</head>
+
+<body>
+
+<h1>Make your Mobile Phone Order</h1>
+<h2>Customer Details</h2>
+<form target="_blank "action="http://127.0.0.1:8080/xml" method="post">
+	First name: <input type="text" name="first_name" id="first_name"/>
+	<br></br>
+	Last name: <input type="text" name="last_name" />
+	<br></br>
+    <input type="button" name="ok" value="OK"  />
+</form>
+<h2>Order Details</h2>
+<form target="_blank "action="http://127.0.0.1:8080/xml" method="post">
+	Select your Frame: 
+	<select name="Frame">
+	<option value="Frame_1">Frame 1 </option>
+	<option value="Frame_2">Frame 2 </option>
+	<option value="Frame_3">Frame 3 </option>
+	</select>
+	<br></br>
+	Select Frame Colour 
+	<select name="Frame_colour">
+	<option value="Frame_red"> Red </option>
+	<option value="Frame_green"> Green </option>
+	<option value="Frame_blue"> Blue </option>
+	</select>
+	<br></br>
+	Select Screen Type 
+	<select name="Screen_type">
+	<option value="Screen_type_1"> Screen type 1 </option>
+	<option value="Screen_type_2"> Screen type 2 </option>
+	<option value="Screen_type_3"> Screen type 3 </option>
+	</select>
+	
+	<br></br>
+	
+	Select Screen Colour: 
+	<select name="Screen_colour">
+	<option value="Screen_red"> Red </option>
+	<option value="Screen_green"> Green </option>
+	<option value="Screen_blue"> Blue </option>
+	</select>
+	
+	<br></br>
+	
+	Select your Keyboard: 
+	<select name="Keyboard">
+	<option value="Keyboard_1"> Keyboard 1 </option>
+	<option value="Keyboard_2"> Keyboard 2 </option>
+	<option value="Keyboard_3"> Keyboard 3 </option>
+	</select>
+	
+	<br></br>
+	
+	Select your Keyboard Colour: 
+	<select name="Keyboard_colour">
+	<option value="Keyboard_red"> Red </option>
+	<option value="Keyboard_green"> Green </option>
+	<option value="Keyboard_blue"> Blue </option>
+	</select>
+	
+	<br></br>
+	
+	Order Quantity: <input type='number' size='10' id='numberinput' name='Order' value='0' />
+    <br><br>
+    <input type="button" name="ok" value="OK"  />
+    <br><br>
+	<input type="reset" name="reset"  value="Reset" />
+	<br></br>
+	<input type="submit" name="__exclude__Submit" value="Submit">
+
+</form>
+</body>
+</html>

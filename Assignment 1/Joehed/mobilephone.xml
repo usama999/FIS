@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mobileorder>
+    <first_name>Joe</first_name>
+    <last_name>David</last_name>
+    <Frame>Frame_1</Frame>
+    <Frame_colour>Frame_red</Frame_colour>
+    <Screen_type>Screen_type_1</Screen_type>
+    <Screen_colour>Screen_red</Screen_colour>
+    <Keyboard>Keyboard_1</Keyboard>
+    <Keyboard_colour>Keyboard_Red</Keyboard_colour>
+    <Order>1</Order>
+</mobileorder>
+
+
+
+
+
+
+
+
+

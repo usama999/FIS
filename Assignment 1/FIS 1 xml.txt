@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Place your Order>
+     <Customer Name>Usamah Yakub</Customer Name>
+     <Mobile No.>04699999999</Mobile No.>
+     <Address>Insinoorinkatu 60</Address>
+     <m@il id>usamah@student.tut.fi</m@il id>
+     <Select Frame>Frame 1</Select Frame>
+     <Select Color>Green</Select Color>
+     <Select Screen>Super Amoled</Select Screen>
+     <Select Keyboard>Red</Select Keyboard>
+</Place your Order>

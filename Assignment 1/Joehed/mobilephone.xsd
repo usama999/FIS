@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:simpleType name="stringtype">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="inttype">
+        <xs:restriction base="xs:positiveInteger"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="dectype">
+        <xs:restriction base="xs:decimal"/>
+    </xs:simpleType>
+
+    <xs:simpleType name="orderidtype">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{6}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="mobileordertype">
+        <xs:sequence>
+        <xs:element name="first_name" type="xs:string"/>
+
+        <xs:element name="last_name" type="xs:string"/>
+
+        <xs:element name="Frame" type="xs:string"/>
+
+        <xs:element name="Frame_colour" type="xs:string"/>
+
+        <xs:element name="Screen_type" type="xs:string"/>
+
+        <xs:element name="Screen_colour" type="xs:string"/>
+
+        <xs:element name="Keyboard" type="xs:string"/>
+
+        <xs:element name="Keyboard_colour" type="xs:string"/>
+
+        <xs:element name="Order" type="xs:positiveInteger"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="mobileorder" type="mobileordertype"/>
+</xs:schema>

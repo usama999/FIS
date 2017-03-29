@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+
+
+    <xs:complexType name="mobileordertype">
+        <xs:sequence>
+        <xs:element name="first_name" type="xs:string"/>
+
+        <xs:element name="last_name" type="xs:string"/>
+
+        <xs:element name="Frame" type="xs:string"/>
+
+        <xs:element name="Frame_colour" type="xs:string"/>
+
+        <xs:element name="Screen_type" type="xs:string"/>
+
+        <xs:element name="Screen_colour" type="xs:string"/>
+
+        <xs:element name="Keyboard" type="xs:string"/>
+
+        <xs:element name="Keyboard_colour" type="xs:string"/>
+
+        <xs:element name="Order" type="xs:positiveInteger"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="mobileorder" type="mobileordertype"/>
+</xs:schema>

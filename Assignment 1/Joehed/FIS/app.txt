@@ -1,0 +1,96 @@
+/**
+ * Created by Joe David on 30-01-2017.
+ */
+//var xml = require('xml');
+var express = require('express');
+var app = express();
+var path = require('path');
+var bodyParser = require('body-parser');
+var builder = require('xmlbuilder');
+var validator = require('xsd-schema-validator');
+var fs = require('fs');
+
+
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// viewed at http://localhost:8080
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/form.html'));
+});
+
+//app.use(express.bodyParser());
+
+app.post('/xml', function(req, res) {
+    var first_name = req.body.first_name;
+    var last_name = req.body.last_name;
+    var Frame= req.body.Frame;
+    var Frame_colour = req.body.Frame_colour;
+    var Screen_type = req.body.Screen_type;
+    var Screen_colour = req.body.Screen_colour;
+    var Keyboard = req.body.Keyboard;
+    var Keyboard_colour = req.body.Keyboard_colour;
+    var Order = req.body.Order;
+/*
+
+    var data = xml([ { firstname: first_name, lastname:last_name }], { declaration: true });
+    var elem = xml.element({ _attr: { decade: '80s', locale: 'US'} });
+    var stream = xml({ XML: elem }, { stream: true });
+    stream.on('data', function (chunk) {console.log("data:", chunk)});
+    elem.push({ firstname: first_name });
+    elem.push({ lastname: last_name });
+    elem.close();
+    console.log(elem);
+    // res.sendFile(first_name);
+
+*/
+
+/*
+var xml = builder.create('mobileorder').ele('first_name',first_name).up()
+    .ele('last_name',last_name).up()
+    .ele('Frame').text(Frame).up()
+    .ele('Frame_colour').text(Frame_colour).up()
+    .ele('Screen_type').text(Screen_type).up()
+    .ele('Screen_colour').text(Screen_colour).up()
+    .ele('Keyboard').text(Keyboard).up()
+    .ele('Keyboard_colour').text(Keyboard_colour).up()
+    .ele('Order').text(Frame).up().end({ pretty: true});
+*/
+
+    var xml = builder.create('mobileorder')
+        .ele('first_name',first_name).up()
+        .ele('last_name',last_name).up()
+        .ele('Frame',Frame).up()
+        .ele('Frame_colour',Frame_colour).up()
+        .ele('Screen_type',Screen_type).up()
+        .ele('Screen_colour',Screen_colour).up()
+        .ele('Keyboard',Keyboard).up()
+        .ele('Keyboard_colour',Keyboard_colour).up()
+        .ele('Order',Order).end({ pretty: true});
+
+
+console.log(xml);
+
+    fs.writeFile('mobilephone.xml', xml, function (err) {
+        if (err) return console.log(err);
+        console.log('File written mobilephone.xml');
+    });
+
+var xmlFileName= "mobilephone.xml";
+var xmlStr = fs.readFileSync(xmlFileName).toString();
+var xsdFileName= "mobilephone.xsd";
+console.log(xmlStr);
+ //   var xsd = fs.createReadableStream('mobilephone.xsd');
+
+
+    validator.validateXML(xmlStr, xsdFileName, function(err, result) {
+        if (err) {
+            console.log('Error was found during validation of file ' + xmlFileName + ':');
+            console.log(err);
+            process.exit(1);
+        }
+        console.log('XML file ' + xmlFileName + ' is valid: ' + result.valid); // true
+    });
+
+});
+
+app.listen(8080);

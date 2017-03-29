@@ -1,0 +1,68 @@
+<!Doctype HTML>
+<HTML>
+<head>
+<script>
+    function validate(){
+
+
+
+    }
+
+
+</script>
+
+</head>
+<body>
+
+<form method = POST, action="127.0.0.1:3001\submit">
+
+<h1> Place Your Order</h1>
+<p1>Customer Name : <input type= "txt" name= "custm.name">
+</p1>
+<br>
+<br>
+<p2> Address: <input type="txt" name="address"> </p2>
+<br>
+<br>
+    postalcode: <input type="txt" name= "postalcode">
+    <br>
+    <br>
+
+    <p> <b> Select Your Product </b> <p/>
+    <select>
+
+        <option value='Product A'> Product A </option>
+        <option value='Product B'> Product B </option>
+        <option value='Product C'> Product C </option>
+
+    </select>
+</form>
+    <br>
+
+    <input type="submit" name="submit" value="Submit" onclick="return validate() " />
+<br>
+
+    <form target =_blank action="/check1" method="GET">
+        Manufactured Products : <input type="submit" name="check1 " value="Check"/>
+    </form>
+<br>
+
+    <form target =_blank action="/check2" method="POST">
+        History of Customer : <input type= "text" name= "custm.name1"> <input type="submit" name="check2 " value= "Enter Customer Name and CLICK !!"  />
+    </form>
+    <br>
+
+    <form target =_blank action="/check3" method="GET">
+        Products in Process : <input type="submit" name="check3 " value="Check"  />
+    </form>
+    <br>
+    <form target =_blank action="/check4" method="GET">
+        Last Weeks Order : <input type= "submit" name= "custm.name2">
+    </form>
+    <br>
+
+</form>
+</body>
+</HTML>
+
+
